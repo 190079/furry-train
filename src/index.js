@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore} from 'redux';
+import {Provider} from "react-redux";
+import { ThemeReducer } from './components';
+
+const theme = createStore(ThemeReducer);
 
 ReactDOM.render(
   <React.StrictMode>
+  <Provider store={theme} >
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

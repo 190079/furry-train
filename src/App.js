@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Marginer, NavBar } from './components'
+import {useSelector,useDispatch} from "react-redux";
+import {darkTheme, lightTheme} from "./components/index";
+import {Footer} from "./components/index"
+import "./App.css"
 
 function App() {
+  const dispatch = useDispatch()
+  const theme = useSelector((state) => state.theme);
+  {(theme === "dark") ? dispatch(darkTheme()) : dispatch(lightTheme()) }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <nav >
+      <NavBar  />
+      <Marginer  direction="vertical" margin="5rem"/>
+      <h1>hello</h1>
+      <Marginer direction="vertical" margin="10px" />
+      <Footer />
+    </nav>
+  )
 }
 
-export default App;
+export default App

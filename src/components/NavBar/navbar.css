@@ -1,0 +1,85 @@
+.offcanvas-header {
+    background-color: var(--link);
+}
+
+.darkmode .offcanvas-header {
+    color: var(--light-container);
+    font-weight: bold;
+}
+
+.offcanvas-body {
+    background-color: var(--light-bg);
+}
+
+.darkmode .offcanvas-body {
+    background-color: #212529;
+}
+
+.offcanvas-body .container {
+    border: 1px solid var(--link);
+    background-color: var(--light-container);
+    padding: 1rem;
+}
+
+
+
+#nav-links {
+    color: var(--light-text);
+    background: var(--light-bg);
+    border: 1px solid var(--light-text);
+
+}
+
+.darkmode #nav-links {
+    color: var(--dark-text);
+    background: var(--dark-bg);
+    border: 1px solid var(--link);
+
+
+}
+
+
+#nav-links:hover {
+    background: var(--link);
+    color: var(--light-container);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.NavbarTitle {
+    color: var(--light-text);
+    border-bottom: 1px solid var(--light-text);
+}
+
+.darkmode .NavbarTitle {
+    color: var(--dark-text);
+    border-bottom: 1px solid var(--link);
+
+}
+
+#nav-brand {
+    background-color: transparent;
+    font-weight: 700;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+    background: var(--light-bg);
+    border-radius: 20px;
+}
+
+.darkmode #nav-brand {
+    background-color: var(--dark-bg);
+}
+
+#nav-brand:hover {
+    background-color: var(--link)
+}
+
+.btn-close {
+    border: 1px solid red;
+    border-radius: 50%;
+
+}
+
+.btn-close:hover {
+    background-color: red;
+}
