@@ -1,20 +1,15 @@
-import React from 'react'
-import { Marginer, NavBar } from './components'
-import {useSelector,useDispatch} from "react-redux";
-import {darkTheme, lightTheme} from "./components/index";
-import {Footer} from "./components/index"
+import React from 'react';
+import {NavBar,Footer,LightTheme,DarkTheme} from './components/index';
 import "./App.css"
-
+import {useSelector,useDispatch} from "react-redux";
 function App() {
+  const theme = useSelector(state => state.theme)
   const dispatch = useDispatch()
-  const theme = useSelector((state) => state.theme);
-  {(theme === "dark") ? dispatch(darkTheme()) : dispatch(lightTheme()) }
+  {theme === "dark" ? dispatch(DarkTheme()) : dispatch(LightTheme()) }
   return (
-    <nav >
-      <NavBar  />
-      <Marginer  direction="vertical" margin="5rem"/>
-      <h1>hello</h1>
-      <Marginer direction="vertical" margin="10px" />
+    <nav className="MainContainer">
+      <NavBar />
+      <h1>App</h1>
       <Footer />
     </nav>
   )

@@ -1,72 +1,46 @@
-import React from 'react'
-import Logo from "../../assets/logo.svg"
-import {Navbar,Container,Nav,NavDropdown,Offcanvas,Button,Form,FormControl} from 'react-bootstrap/';
-import {Marginer,ToggleSwitch} from "../index";
-import {useSelector,} from 'react-redux';
+import React from 'react';
 import "./navbar.css";
 
+import { ToggleSwitch } from '../index';
+import {Navbar,Form,NavDropdown,Button,Nav,FormControl,Container} from 'react-bootstrap'
+function NavBar() {
+  return (
+    <Navbar bg="transparent" expand="lg" >
+  <Container fluid id="navbar" className="boxshadow">
+    <Navbar.Brand id="navbar-links" href="#">Tech Chad</Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav
+        className="me-auto my-2 my-lg-0"
+        style={{ maxHeight: '100px' }}
+        navbarScroll
+      >
+        <Nav.Link id="navbar-links" href="#action1">About us</Nav.Link>
+        <Nav.Link id="navbar-links" href="#action2">Contact</Nav.Link>
+        <NavDropdown title="Blog" id="navbarScrollingDropdown">
+          <NavDropdown.Item id="navbar-links" href="#action3">Action</NavDropdown.Item>
+          <NavDropdown.Item id="navbar-links" href="#action4">Another action</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item id="navbar-links" href="#action5">
+            Something else here
+          </NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      <ToggleSwitch />
 
-const NavBarContainer = () =>{
-    return <Container fluid>
-    <Navbar.Brand href="/home" id="nav-brand"><img src={Logo}  height="40" width="40" />{' '}
-      Tech Chad</Navbar.Brand>{' '}
-    <Navbar.Toggle aria-controls="offcanvasNavbar" />
-    <Navbar.Offcanvas
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-      placement="end"
-    >
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
-        <Nav className="justify-content-end flex-grow-1 pe-3 container round-container boxshadow">
-          <h3 className="NavbarTitle">Pages</h3>
-          <Nav.Link href="#action1" id="nav-links">Home</Nav.Link>
-          <Nav.Link href="#action2" id="nav-links">Blog</Nav.Link>
-        </Nav>
-        <Marginer  direction="vertical" margin="10px"/>
-        <Nav className="justify-content-end flex-grow-1 pe-3 container round-container boxshadow">
-          <h3 className="NavbarTitle">Settings</h3>
-          <ToggleSwitch id="nav-links" />
-        </Nav>
-        <Marginer  direction="vertical" margin="10px"/>
-        <Nav className="justify-content-end flex-grow-1 pe-3">
-        <Form className="d-flex">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-        </Nav>
-      </Offcanvas.Body>
-    </Navbar.Offcanvas>
+      <Form className="d-flex">
+        <FormControl
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+    </Navbar.Collapse>
   </Container>
-}
-const Dark = () => {
-    return (
-        <Navbar bg="dark" variant="dark" expand={false} fixed="top" className="boxshadow">
-        <NavBarContainer />
 </Navbar>
   )
-}
-
-
-
-const Light = () => {
-    return (
-        <Navbar bg="light" expand={false} fixed="top" className="boxshadow">
-        <NavBarContainer />
-        </Navbar>
-  )
-}
-
-function NavBar() {
-    const theme = useSelector((state) => state.theme);
-    return (theme === "dark") ? (<Dark /> ): <Light />;
 }
 
 export default NavBar

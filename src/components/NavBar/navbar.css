@@ -1,85 +1,44 @@
-.offcanvas-header {
-    background-color: var(--link);
-}
-
-.darkmode .offcanvas-header {
-    color: var(--light-container);
-    font-weight: bold;
-}
-
-.offcanvas-body {
-    background-color: var(--light-bg);
-}
-
-.darkmode .offcanvas-body {
-    background-color: #212529;
-}
-
-.offcanvas-body .container {
-    border: 1px solid var(--link);
+#navbar {
     background-color: var(--light-container);
-    padding: 1rem;
 }
 
-
-
-#nav-links {
-    color: var(--light-text);
-    background: var(--light-bg);
-    border: 1px solid var(--light-text);
-
+.darkmode #navbar {
+    background-color: var(--dark-container);
 }
 
-.darkmode #nav-links {
-    color: var(--dark-text);
-    background: var(--dark-bg);
-    border: 1px solid var(--link);
-
-
-}
-
-
-#nav-links:hover {
-    background: var(--link);
-    color: var(--light-container);
+#navbar-links {
     font-weight: bold;
-    font-size: 1rem;
-}
-
-.NavbarTitle {
+    text-decoration: none;
     color: var(--light-text);
-    border-bottom: 1px solid var(--light-text);
 }
 
-.darkmode .NavbarTitle {
+.darkmode #navbar-links {
     color: var(--dark-text);
-    border-bottom: 1px solid var(--link);
-
 }
 
-#nav-brand {
-    background-color: transparent;
-    font-weight: 700;
-    padding-left: 0.2rem;
-    padding-right: 0.5rem;
+#navbar-links:hover {
+    background: var(--light-bg)
+}
+
+.darkmode #navbar-links:hover {
+    background: var(--link)
+}
+
+#navbarScrollingDropdown {
+    color: var(--light-text);
+    font-weight: bold;
+}
+
+.darkmode #navbarScrollingDropdown {
+    color: var(--dark-text);
+}
+
+.dropdown-menu {
     background: var(--light-bg);
-    border-radius: 20px;
+    color: var(--light-text)
 }
 
-.darkmode #nav-brand {
-    background-color: var(--dark-bg);
-}
-
-#nav-brand:hover {
-    background-color: var(--link)
-}
-
-.btn-close {
-    border: 1px solid red;
-    border-radius: 50%;
-
-}
-
-.btn-close:hover {
-    background-color: red;
+.darkmode .dropdown-menu {
+    background: var(--dark-container);
+    color: var(--dark-text)
 }

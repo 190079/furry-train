@@ -1,7 +1,5 @@
-@media (max-width: 1000) {}
-
 body {
-  background-color: var(--light-bg);
+  background: var(--light-bg);
   color: var(--light-text);
 }
 
@@ -10,27 +8,17 @@ body {
   color: var(--dark-text);
 }
 
-.container {
-  background-color: var(--light-container);
-  color: var(--light-text);
-}
-
-.darkmode .container {
-  background-color: var(--dark-container);
-  color: var(--dark-text);
-}
-
 .round-container {
   border-radius: 25px;
-
 }
 
 .boxshadow {
-  box-shadow: 0 2px 2px 0 var(--dark-bg);
+  box-shadow: 1px 2px 2px 1px var(--light-text);
+  border: 1px solid var(--light-text);
 }
 
 .darkmode .boxshadow {
-  box-shadow: 0 2px 2px 0 var(--link);
-
+  box-shadow: 1px 2px 2px 1px var(--link);
+  border: 1px solid var(--link);
 
 }

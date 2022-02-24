@@ -16,9 +16,9 @@ code {
 :root {
   --light-bg: #bdbebd;
   --light-text: #0d1117;
-  --light-container: #fff;
+  --light-container: #f8f9fa;
   --link: #e9874a;
-  --dark-bg: #0d1117;
+  --dark-bg: #28282a;
   --dark-text: #bdbebd;
-  --dark-container: #373738;
+  --dark-container: #020202;
 }

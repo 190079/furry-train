@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "./toggleswitch.css";
 import {useSelector,useDispatch} from "react-redux";
-import {darkTheme,lightTheme} from "../index";
+import {DarkTheme,LightTheme} from "../index";
 import styled from "styled-components/";
 import Marginer from '../Marginer';
 
@@ -14,17 +14,20 @@ const MainContainer = styled.nav`
 `
 const Sw = () => {
     const theme = useSelector(state => state.theme)
+
+    useEffect(()=>{
+        document.getElementById("btn").checked = (theme === "dark")
+    },[theme])
+
     const dispatch = useDispatch()
+    console.log(theme)
     return (
-        <label class="switch">
-           {(theme === "dark") ? ( <input type="checkbox" checked onChange={ () => {
-                (theme === "dark") ? dispatch(lightTheme()) : dispatch(darkTheme());
+        <label className="switch">
+           <input type="checkbox" id="btn" onChange={ () => {
+                (theme === "dark") ? dispatch(LightTheme()) : dispatch(DarkTheme());
                 window.location.reload();
-            }}/>) : (<input type="checkbox" onChange={ () => {
-                (theme === "dark") ? dispatch(lightTheme()) : dispatch(darkTheme());
-                window.location.reload();
-            }}/>)}
-            <span class="slider round"></span>
+            }}/>)
+            <span className="slider round"></span>
         </label>
     )
 }
