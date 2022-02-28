@@ -86,7 +86,11 @@
     margin-left: 6px;
     margin-right: 0;
     border-radius: 100%;
-    background-color: #33353d
+    background-color: var(--light-bg);
+}
+
+.darkmode .site-footer .social-icons a {
+    background-color: var(--dark-bg);
 }
 
 .copyright-text {
@@ -131,7 +135,7 @@
 
 .social-icons a {
     background-color: #eceeef;
-    color: #818a91;
+    color: var(--light-text);
     font-size: 16px;
     display: inline-block;
     line-height: 44px;
@@ -144,6 +148,7 @@
     -o-transition: all .2s linear;
     transition: all .2s linear
 }
+
 
 .social-icons a:active,
 .social-icons a:focus,

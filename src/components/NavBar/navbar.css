@@ -1,9 +1,11 @@
-#navbar {
-    background-color: var(--light-container);
+.navbar {
+    top: 0;
+    position: sticky;
+    background-color: var(--light-container) !important;
 }
 
-.darkmode #navbar {
-    background-color: var(--dark-container);
+.darkmode .navbar {
+    background-color: var(--dark-container) !important;
 }
 
 #navbar-links {
@@ -17,11 +19,15 @@
 }
 
 #navbar-links:hover {
-    background: var(--light-bg)
+    background: var(--light-bg);
+    border-radius: 4px;
+
 }
 
 .darkmode #navbar-links:hover {
-    background: var(--link)
+    text-decoration: none;
+    background: var(--link);
+    color: #fff !important;
 }
 
 #navbarScrollingDropdown {
@@ -34,11 +40,26 @@
 }
 
 .dropdown-menu {
-    background: var(--light-bg);
+    background: var(--light-container);
     color: var(--light-text)
 }
 
 .darkmode .dropdown-menu {
     background: var(--dark-container);
     color: var(--dark-text)
+}
+
+.d-flex {
+    margin-left: 10px ! important;
+}
+
+@media (max-width: 991px) {
+    .d-flex {
+        align-self: justify;
+        margin-bottom: 1rem;
+    }
+}
+
+.container-fluid>a {
+    padding: 0 10px 0 10px;
 }

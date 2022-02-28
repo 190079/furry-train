@@ -1,39 +1,29 @@
-import React,{useEffect} from 'react';
+import React,{useLayoutEffect} from 'react';
 import "./toggleswitch.css";
-import {useSelector,useDispatch} from "react-redux";
-import {DarkTheme,LightTheme} from "../index";
+
 import styled from "styled-components/";
-import Marginer from '../Marginer';
 
 const MainContainer = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
     align-text: center;
+    font-size: 1rem;
+    font-weight: bold;
     
 `
-const Sw = () => {
-    const theme = useSelector(state => state.theme)
-
-    useEffect(()=>{
-        document.getElementById("btn").checked = (theme === "dark")
-    },[theme])
-
-    const dispatch = useDispatch()
-    console.log(theme)
+const Sw = ({event,state}) => {
     return (
         <label className="switch">
-           <input type="checkbox" id="btn" onChange={ () => {
-                (theme === "dark") ? dispatch(LightTheme()) : dispatch(DarkTheme());
-                window.location.reload();
-            }}/>)
+           <input type="checkbox" id="btn"  checked={state} onChange={event}/>
             <span className="slider round"></span>
         </label>
     )
 }
-function ToggleSwitch() {
+
+function ToggleSwitch({event,Title,state}) {
     return <MainContainer >
-        {"Dark Mode " }<Marginer direction="horizontal" margin={10} /><Sw />
+        {Title }<Sw  event={event} state={state}/>
     </MainContainer>
     
 }
