@@ -40,6 +40,7 @@ const WrapperBottomContainer = styled.nav`
         color: #faa370;
         font-family: 'Helvetica';
         font-weight: bold;
+        font-size: 2rem;
     }
     &>p{
         color: #fff;
@@ -48,10 +49,10 @@ const WrapperBottomContainer = styled.nav`
         align-self: center;
         margin-top: 10px;
         min-width: 100%;
-        &> h1,p{
+        &> *{
             align-self: center;
-            font-size: 18px;
-            justify-content: center;
+            justify-content: justify;
+            margin: 1rem 1rem 0 1rem;
         }
         
     }
@@ -66,6 +67,7 @@ const Button = styled.button`
     padding: 0 15px 0 15px;
     border: 2px solid #0d6efd;
     &:hover {
+        transition: all 0.3s;
         border-radius: 15px;
         background: transparent;
     }

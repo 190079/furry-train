@@ -5,14 +5,15 @@ import './index.css';
 import App from './App';
 import {ThemeProvider} from './components/index'
 import reportWebVitals from './reportWebVitals';
-
-
+import {RouterBrowser} from './components/index'
 
 
 ReactDOM.render(
   <React.StrictMode>
   <ThemeProvider>
-    <App />
+    <RouterBrowser>
+      <App />
+    </RouterBrowser>
   </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

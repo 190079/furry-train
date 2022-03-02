@@ -9,7 +9,13 @@ body {
 }
 
 .round-container {
-  border-radius: 25px;
+  border-radius: 25px !important;
+  background: var(--light-container) !important;
+}
+
+
+.darkmode .round-container {
+  background: var(--dark-container) !important;
 }
 
 .boxshadow {
@@ -21,19 +27,6 @@ body {
   box-shadow: 1px 2px 2px 1px var(--link);
   border: 1px solid var(--link);
 
-}
-
-.container {
-  display: flex;
-  background: var(--light-container);
-  border-radius: 15px;
-  justify-content: center;
-}
-
-.darkmode .container {
-  display: flex;
-  width: 100%;
-  background: var(--dark-container);
 }
 
 .loader {

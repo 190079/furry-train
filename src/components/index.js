@@ -4,3 +4,5 @@ export {default as Footer} from './footer/index';
 export {default as Marginer} from './Marginer/index';
 export {default as ToggleSwitch} from "./toggleSwitch/index";
 export {default as Banner} from './banner/index';
+export {default as ServiceCard} from './serviceCard/index';
+export {default as RouterBrowser,ReactRoutes} from './links/index';

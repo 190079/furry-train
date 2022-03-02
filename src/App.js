@@ -1,7 +1,6 @@
 import React,{useEffect,useRef} from 'react';
 import { gsap } from "gsap";
-import {HomePage} from "./pages/index";
-import {NavBar,Footer,LightTheme,DarkTheme,Marginer} from './components/index';
+import {NavBar,Footer,LightTheme,DarkTheme,Marginer,ReactRoutes} from './components/index';
 import "./App.css"
 import {useSelector,useDispatch} from "react-redux";
 
@@ -18,7 +17,7 @@ function App() {
   return (
     <nav className="MainContainer">
       <NavBar />
-      <HomePage />
+      <ReactRoutes />
       <Footer  />
     </nav>
   )
